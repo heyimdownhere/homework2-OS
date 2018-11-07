@@ -20,7 +20,7 @@ public class Consumer implements Runnable {
             packet = (Packet) buffer.remove();
             System.out.println("firewall processing");
             SleepUtilities.nap(packet.serviceTime);
-            System.out.println("Packet took this long:" + packet);
+            System.out.println("Total packet time in ms:" + packet);
         }
     }
     private Buffer buffer;

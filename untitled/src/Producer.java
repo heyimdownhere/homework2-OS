@@ -20,15 +20,14 @@ public class Producer implements Runnable {
     }
     public void run() {
         Packet packet;
+        System.out.println("Network Recieving packets");
 
         while (true) {
-            System.out.println("Network Recieving packets");
-            SleepUtilities.nap(sleepTime);
-
             // produce an item & enter it into the buffer
             packet = new Packet(proccesingTime);
-
             buffer.insert(packet);
+
+            SleepUtilities.nap(sleepTime);
         }
     }
     private Buffer buffer;
