@@ -1,4 +1,3 @@
-import java.time.*;
 
 public class Packet {
 
@@ -8,6 +7,7 @@ public class Packet {
 
     public Packet (int time) {
         serviceTime = time;
+        startTime();
     }
 
     public void startTime() {
@@ -15,7 +15,12 @@ public class Packet {
     }
 
     public void endTime() {
-        waitTime = startTime- System.currentTimeMillis();
+        waitTime = System.currentTimeMillis() - startTime;
     }
 
+    @Override
+    public String toString() {
+        endTime();
+        return waitTime + "";
+    }
 }

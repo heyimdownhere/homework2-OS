@@ -22,12 +22,11 @@ public class Producer implements Runnable {
         Packet packet;
 
         while (true) {
-            System.out.println("Producer napping");
-            SleepUtilities.nap();
+            System.out.println("Network Recieving packets");
+            SleepUtilities.nap(sleepTime);
 
             // produce an item & enter it into the buffer
             packet = new Packet(proccesingTime);
-            System.out.println("Producer produced " + packet);
 
             buffer.insert(packet);
         }

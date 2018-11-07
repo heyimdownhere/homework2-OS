@@ -32,6 +32,19 @@ public class BoundedBuffer implements Buffer {
         full = new Semaphore(0);
     }
 
+    public BoundedBuffer(int bufferSize) {
+        // buffer is initially empty
+        count = 0;
+        in = 0;
+        out = 0;
+
+        buffer = new Object[bufferSize];
+
+        mutex = new Semaphore(1);
+        empty = new Semaphore(bufferSize);
+        full = new Semaphore(0);
+    }
+
     // producer calls this method
     public void insert(Object item) {
         try {
@@ -45,9 +58,9 @@ public class BoundedBuffer implements Buffer {
         in = (in + 1) % BUFFER_SIZE;
 
         if (count == BUFFER_SIZE) {
-            System.out.println("Producer Entered " + item + " Buffer FULL");
+            System.out.println("            Packet received --- Buffer FULL");
         } else {
-            System.out.println("Producer Entered " + item + " Buffer Size = " + count);
+            System.out.println("            Packet received --- Buffer Size = " + count);
         }
 
         mutex.release();
@@ -68,9 +81,9 @@ public class BoundedBuffer implements Buffer {
         out = (out + 1) % BUFFER_SIZE;
 
         if (count == 0) {
-            System.out.println("Consumer Consumed " + item + " Buffer EMPTY");
+            System.out.println("            Firewall took packet --- Buffer EMPTY");
         } else {
-            System.out.println("Consumer Consumed " + item + " Buffer Size = " + count);
+            System.out.println("            Firewall took packet --- Buffer Size = " + count);
         }
 
         mutex.release();
