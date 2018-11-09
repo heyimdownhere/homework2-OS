@@ -20,7 +20,7 @@ public class SleepUtilities
 	 * Nap between zero and duration seconds.
 	 */
 	public static void nap(int duration) {
-        	int sleeptime = (int) (duration * Math.random() );
+        	int sleeptime = (int) (duration); //* Math.random() );
         	try { Thread.sleep(sleeptime*1000); }
         	catch (InterruptedException e) {}
 	}

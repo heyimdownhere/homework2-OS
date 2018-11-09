@@ -12,8 +12,13 @@ public class Factory {
         // now create the producer and consumer threads
         Thread packetProducer = new Thread(new Producer(server));
         Thread firewall = new Thread(new Consumer(server));
-        packetProducer.start();
-        firewall.start();
+        try{
+            packetProducer.start();
+            firewall.start();
+        } catch(Exception e) {
+            
+        }
+
 
     }
 }

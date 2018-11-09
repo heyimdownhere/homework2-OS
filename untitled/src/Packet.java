@@ -20,7 +20,9 @@ public class Packet {
 
     @Override
     public String toString() {
-        endTime();
+        if(waitTime == 0) {
+            endTime();
+        }
         return waitTime + "";
     }
 }
