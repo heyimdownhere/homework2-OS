@@ -26,7 +26,6 @@ public class Producer implements Runnable {
             // produce an item & enter it into the buffer
             packet = new Packet(proccesingTime);
             buffer.insert(packet);
-
             SleepUtilities.nap(sleepTime);
         }
     }

@@ -47,6 +47,13 @@ public class BoundedBuffer implements Buffer {
 
     // producer calls this method
     public void insert(Object item) {
+        //used to drop packets if the buffer is full
+        if(count == BUFFER_SIZE) {
+            System.out.println("PACKET DROPPED -- BECAUSE BUFFER FULL");
+            return;
+        }
+        //System.out.println("shouldnt print after packet dropped");
+
         try {
             empty.acquire();
             mutex.acquire();

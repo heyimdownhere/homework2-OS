@@ -2,8 +2,9 @@
 public class Packet {
 
     public int serviceTime = 0;
-    public double waitTime = 0;
+    public double turnaroundTime = 0;
     public double startTime = 0;
+    public double waitTime = 0;
 
     public Packet (int time) {
         serviceTime = time;
@@ -15,14 +16,19 @@ public class Packet {
     }
 
     public void endTime() {
-        waitTime = System.currentTimeMillis() - startTime;
+        turnaroundTime = System.currentTimeMillis() - startTime;
+    }
+
+    public void waitTime() {
+        waitTime = turnaroundTime - serviceTime;
     }
 
     @Override
     public String toString() {
-        if(waitTime == 0) {
+        if(turnaroundTime == 0) {
             endTime();
+            waitTime();
         }
-        return waitTime + "";
+        return turnaroundTime + "";
     }
 }
