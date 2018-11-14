@@ -10,7 +10,6 @@ import java.util.*;
 public class Consumer implements Runnable {
 
     //meme name
-    public Stats staticor;
     ArrayList<Packet> list;
 
     public Consumer(Buffer b) {
@@ -22,31 +21,15 @@ public class Consumer implements Runnable {
         list = listIN;
     }
 
-    public Consumer(Buffer b, Stats stat) {
-        buffer = b;
-        staticor = stat;
-    }
-
     public void run() {
         Packet packet;
 
         while (true) {
             packet = (Packet) buffer.remove();
             System.out.println("firewall processing");
-            SleepUtilities.nap(packet.serviceTime);
+            SleepUtilities.nap((int)packet.serviceTime);
             System.out.println("Total packet time in ms:" + packet);
-            AddStats(packet);
         }
-    }
-
-    private void AddStats(Packet packet) {
-        staticor.addServiceTime(packet.serviceTime);
-        staticor.addTurnaroundTime(packet.turnaroundTime);
-        staticor.addWaitTimes(packet.waitTime);
-    }
-
-    public Stats getStatObj() {
-        return staticor;
     }
 
     private Buffer buffer;

@@ -11,11 +11,10 @@ public class Factory {
     public static void main(String args[]) {
         ArrayList<Packet> list = new ArrayList<Packet>();
         Buffer server = new BoundedBuffer();
-        Stats stat = new Stats();
 
         // now create the producer and consumer threads
         Thread packetProducer = new Thread(new Producer(server,10, 5));
-        Thread firewall = new Thread(new Consumer(server, stat));
+        Thread firewall = new Thread(new Consumer(server));
         try{
             packetProducer.start();
             firewall.start();
