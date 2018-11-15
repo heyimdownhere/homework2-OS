@@ -9,16 +9,8 @@ import java.util.*;
 
 public class Consumer implements Runnable {
 
-    //meme name
-    ArrayList<Packet> list;
-
     public Consumer(Buffer b) {
         buffer = b;
-    }
-
-    public Consumer(Buffer b, ArrayList listIN) {
-        buffer = b;
-        list = listIN;
     }
 
     public void run() {

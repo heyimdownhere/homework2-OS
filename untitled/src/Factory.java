@@ -1,6 +1,7 @@
 //package Semaphores.boundedbuffer;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 /**
  * This creates the buffer and the producer and consumer threads.
@@ -9,19 +10,29 @@ import java.util.ArrayList;
 public class Factory {
 
     public static void main(String args[]) {
-        ArrayList<Packet> list = new ArrayList<Packet>();
         Buffer server = new BoundedBuffer();
+        Packet packet = new Packet(5);
 
         // now create the producer and consumer threads
-        Thread packetProducer = new Thread(new Producer(server,10, 5));
+        Thread packetProducer = new Thread(new Producer(server,5, 10));
         Thread firewall = new Thread(new Consumer(server));
-        try{
-            packetProducer.start();
-            firewall.start();
-        } catch(Exception e) {
-            
+
+        packetProducer.start();
+        firewall.start();
+        //run for 1 minute then move to code below
+        try {
+            TimeUnit.MINUTES.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            System.out.println("failed");
         }
-
-
+        packetProducer.stop();
+        firewall.stop();
+        packet.getAverages();
+        //now print averages and maxes
+        System.out.println("Wait Times -- Average: " + Packet.avgWaitTime + " Max: " + Packet.maxWaitTime);
+        System.out.println("Turnaround Times -- Average: " + Packet.avgTurnaroundTime + " Max: " + Packet.maxTurnaroundTime);
+        System.out.println("Service Times -- Average: " + Packet.avgServiceTime + " Max: " + Packet.maxServiceTime);
+        System.out.println("Packets Dropped: " + (BoundedBuffer.droppedPackets/BoundedBuffer.totalPackets) + "%");
     }
 }
