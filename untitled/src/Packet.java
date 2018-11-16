@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Packet {
 
     public double serviceTime = 0;
+    public double realServiceTime = 0;
     public double turnaroundTime = 0;
     public double startTime = 0;
     public double waitTime = 0;
@@ -30,11 +31,20 @@ public class Packet {
     }
 
     public void waitTime() {
-        waitTime = turnaroundTime - (serviceTime * 1000);
+        waitTime = turnaroundTime - (realServiceTime);
+    }
+
+    public void startRealServiceTime() {
+        realServiceTime = System.currentTimeMillis();
+    }
+
+    public void setRealServiceTime() {
+        realServiceTime = System.currentTimeMillis() - realServiceTime;
     }
 
     @Override
     public String toString() {
+        setRealServiceTime();
         if(turnaroundTime == 0) {
             endTime();
             waitTime();
@@ -48,7 +58,7 @@ public class Packet {
     //set max after every packet
     private void getMax() {
         if (serviceTime > maxServiceTime) {
-            maxServiceTime = serviceTime;
+            maxServiceTime = realServiceTime;
         }
         if(waitTime > maxWaitTime) {
             maxWaitTime = waitTime;
@@ -61,7 +71,7 @@ public class Packet {
     private void addStats() {
         waitTimes.add(waitTime);
         turnaroundTimes.add(turnaroundTime);
-        serviceTimes.add(serviceTime);
+        serviceTimes.add(realServiceTime);
     }
 
     public void getAverages() {

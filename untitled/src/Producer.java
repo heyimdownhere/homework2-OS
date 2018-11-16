@@ -20,7 +20,7 @@ public class Producer implements Runnable {
     }
     public void run() {
         Packet packet;
-        System.out.println("Network Recieving packets");
+        //System.out.println("Network Recieving packets");
 
         while (true) {
             // produce an item & enter it into the buffer

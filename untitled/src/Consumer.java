@@ -18,9 +18,10 @@ public class Consumer implements Runnable {
 
         while (true) {
             packet = (Packet) buffer.remove();
-            System.out.println("firewall processing");
+            packet.startRealServiceTime();
+            //System.out.println("firewall processing");
             SleepUtilities.nap((int)packet.serviceTime);
-            System.out.println("Total packet time in ms:" + packet);
+            System.out.println("Total packet time in ms: " + packet);
         }
     }
 

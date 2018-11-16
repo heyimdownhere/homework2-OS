@@ -30,9 +30,10 @@ public class Factory {
         firewall.stop();
         packet.getAverages();
         //now print averages and maxes
-        System.out.println("Wait Times -- Average: " + Packet.avgWaitTime + " Max: " + Packet.maxWaitTime);
-        System.out.println("Turnaround Times -- Average: " + Packet.avgTurnaroundTime + " Max: " + Packet.maxTurnaroundTime);
-        System.out.println("Service Times -- Average: " + Packet.avgServiceTime + " Max: " + Packet.maxServiceTime);
-        System.out.println("Packets Dropped: " + (BoundedBuffer.droppedPackets/BoundedBuffer.totalPackets) + "%");
+        System.out.println("Wait Times -- Average : " + Packet.avgWaitTime + " Max : " + Packet.maxWaitTime);
+        System.out.println("Turnaround Times -- Average : " + Packet.avgTurnaroundTime + " Max : " + Packet.maxTurnaroundTime);
+        System.out.println("Service Times -- Average : " + Packet.avgServiceTime + " Max : " + Packet.maxServiceTime);
+        System.out.println("Packets Dropped : " + (BoundedBuffer.droppedPackets/BoundedBuffer.totalPackets) + "%");
+        System.out.println("Proccesor Util : " + "--put shit here--");
     }
 }
