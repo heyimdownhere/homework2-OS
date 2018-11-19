@@ -13,6 +13,7 @@ public class Packet {
     public static double avgServiceTime = 0;
     public static double avgTurnaroundTime = 0;
     public static double avgWaitTime = 0;
+    public static double totalServiceTime = 0;
 
     public static ArrayList<Double> serviceTimes = new ArrayList<Double>();
     public static ArrayList<Double> turnaroundTimes = new ArrayList<Double>();
@@ -72,6 +73,7 @@ public class Packet {
         waitTimes.add(waitTime);
         turnaroundTimes.add(turnaroundTime);
         serviceTimes.add(realServiceTime);
+        totalServiceTime += realServiceTime;
     }
 
     public void getAverages() {

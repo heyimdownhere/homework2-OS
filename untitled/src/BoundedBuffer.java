@@ -11,15 +11,15 @@ import java.util.concurrent.Semaphore;
  */
 public class BoundedBuffer implements Buffer {
 
-    private static final int BUFFER_SIZE = 2;
+    private static final int BUFFER_SIZE = 5;
     private Semaphore mutex;
     private Semaphore empty;
     private Semaphore full;
     private int count;
     private int in, out;
     private Object[] buffer;
-    public static int droppedPackets;
-    public static int totalPackets;
+    public static double droppedPackets;
+    public static double totalPackets;
 
     public BoundedBuffer() {
         // buffer is initially empty
