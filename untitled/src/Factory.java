@@ -36,7 +36,7 @@ public class Factory {
         System.out.println("Wait Times -- Average : " + Packet.avgWaitTime + " Max : " + Packet.maxWaitTime);
         System.out.println("Turnaround Times -- Average : " + Packet.avgTurnaroundTime + " Max : " + Packet.maxTurnaroundTime);
         System.out.println("Service Times -- Average : " + Packet.avgServiceTime + " Max : " + Packet.maxServiceTime);
-        System.out.println("Packets Dropped : " + BoundedBuffer.droppedPackets + " out of: " +BoundedBuffer.totalPackets + " == " +(BoundedBuffer.droppedPackets/BoundedBuffer.totalPackets)*100 + "%");
+        System.out.println("Packets Dropped : " + BoundedBuffer.droppedPackets + " out of: " +BoundedBuffer.totalPackets + " == " +(BoundedBuffer.droppedPackets/(BoundedBuffer.totalPackets+BoundedBuffer.droppedPackets))*100 + "%");
         System.out.println("Proccesor Util : " + (Packet.totalServiceTime / time)*100 + "%");
     }
 }
