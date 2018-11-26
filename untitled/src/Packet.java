@@ -53,12 +53,12 @@ public class Packet {
         //add current stats to stats list
         addStats();
         getMax();
-        return turnaroundTime + " wait time: " + waitTime + "ms";
+        return turnaroundTime + " wait time: " + waitTime + "ms" + " real service time: " + realServiceTime;
     }
 
     //set max after every packet
     private void getMax() {
-        if (serviceTime > maxServiceTime) {
+        if (realServiceTime > maxServiceTime) {
             maxServiceTime = realServiceTime;
         }
         if(waitTime > maxWaitTime) {

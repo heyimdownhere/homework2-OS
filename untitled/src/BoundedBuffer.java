@@ -51,7 +51,7 @@ public class BoundedBuffer implements Buffer {
     public void insert(Object item) {
         //used to drop packets if the buffer is full
         if(count == BUFFER_SIZE) {
-            System.out.println("PACKET DROPPED -- BECAUSE BUFFER FULL");
+            //System.out.println("PACKET DROPPED -- BECAUSE BUFFER FULL");
             droppedPackets++;
             return;
         }
