@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c634612d-8097-408e-a2b7-257a4a96e936" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled/Consumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BoundedBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BoundedBuffer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,19 +94,19 @@
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="7" />
-          <entry key="project.open.time.8" value="4" />
+          <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3099" />
+          <entry key="java" value="3104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3099" />
+          <entry key="JAVA" value="3104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -125,7 +123,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Consumer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
@@ -137,8 +135,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Packet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+            <state relative-caret-position="1464">
+              <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
               <folding>
                 <element signature="e#1064#1065#0" expanded="true" />
                 <element signature="e#1125#1126#0" expanded="true" />
@@ -178,11 +176,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BoundedBuffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1272">
-              <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+            <state relative-caret-position="1042">
+              <caret line="63" column="31" lean-forward="true" selection-start-line="62" selection-start-column="28" selection-end-line="63" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -206,9 +204,9 @@
         <option value="$PROJECT_DIR$/src/Producer.java" />
         <option value="$PROJECT_DIR$/src/Packet.java" />
         <option value="$PROJECT_DIR$/src/SleepUtilities.java" />
-        <option value="$PROJECT_DIR$/src/BoundedBuffer.java" />
         <option value="$PROJECT_DIR$/src/Factory.java" />
         <option value="$PROJECT_DIR$/src/Consumer.java" />
+        <option value="$PROJECT_DIR$/src/BoundedBuffer.java" />
       </list>
     </option>
   </component>
@@ -223,7 +221,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -236,6 +233,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -301,8 +299,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.084754795" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08528785" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -375,24 +374,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Stats.java" />
-    <entry file="file://$PROJECT_DIR$/src/SleepUtilities.java">
+    <entry file="file://$PROJECT_DIR$/src/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+        <state relative-caret-position="418">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Factory.java">
+    <entry file="file://$PROJECT_DIR$/src/Packet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BoundedBuffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1272">
-          <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+        <state relative-caret-position="1464">
+          <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+          <folding>
+            <element signature="e#1064#1065#0" expanded="true" />
+            <element signature="e#1125#1126#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -407,21 +403,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Packet.java">
+    <entry file="file://$PROJECT_DIR$/src/Factory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
-          <folding>
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1125#1126#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="600">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Consumer.java">
+    <entry file="file://$PROJECT_DIR$/src/SleepUtilities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        <state relative-caret-position="552">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BoundedBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1042">
+          <caret line="63" column="31" lean-forward="true" selection-start-line="62" selection-start-column="28" selection-end-line="63" selection-end-column="31" />
         </state>
       </provider>
     </entry>
