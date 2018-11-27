@@ -6,14 +6,18 @@
 
 import java.lang.reflect.ParameterizedType;
 import java.util.*;
+import java.util.concurrent.Semaphore;
 
 public class Consumer implements Runnable {
+
+    private Semaphore waitBoi;
 
     public Consumer(Buffer b) {
         buffer = b;
     }
 
     public void run() {
+        waitBoi = new Semaphore(1);
         Packet packet;
 
         while (true) {
@@ -21,7 +25,14 @@ public class Consumer implements Runnable {
             packet.startRealServiceTime();
             //System.out.println("firewall processing");
             SleepUtilities.nap((int)packet.serviceTime);
-            System.out.println("Total packet time in ms: " + packet);
+            try {
+                waitBoi.acquire();
+                System.out.println("Total packet time in ms: " + packet);
+                waitBoi.release();
+            } catch (InterruptedException e) {
+                System.out.println("waitBoi broke");
+                e.printStackTrace();
+            }
         }
     }
 
