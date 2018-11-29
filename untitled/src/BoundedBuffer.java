@@ -54,12 +54,13 @@ public class BoundedBuffer implements Buffer {
 
         try {
             mutex.acquire();
-            //used to drop packets if the buffer is full
-            if(count == BUFFER_SIZE) {
+            if(count >= BUFFER_SIZE) {
                 //System.out.println("PACKET DROPPED -- BECAUSE BUFFER FULL");
                 droppedPackets++;
+                mutex.release();
                 return;
             }
+            //used to drop packets if the buffer is full
             empty.acquire();
         } catch (Exception e) {
         }
