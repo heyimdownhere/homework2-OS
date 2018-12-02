@@ -45,6 +45,11 @@ public class Packet {
 
     @Override
     public String toString() {
+        Stats();
+        return turnaroundTime + " W time: " + waitTime + " RS Time: " + realServiceTime;
+    }
+
+    public void Stats() {
         setRealServiceTime();
         if(turnaroundTime == 0) {
             endTime();
@@ -53,7 +58,6 @@ public class Packet {
         //add current stats to stats list
         addStats();
         getMax();
-        return turnaroundTime + " wait time: " + waitTime + "ms" + " real service time: " + realServiceTime;
     }
 
     //set max after every packet

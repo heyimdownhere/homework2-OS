@@ -16,14 +16,16 @@ public class Factory {
 
         // now create the producer and consumer threads
         Thread packetProducer = new Thread(new Producer(server,12, 10));
+        Thread packetProducer2 = new Thread(new Producer(server,12, 10));
         Thread firewall = new Thread(new Consumer(server));
 
         packetProducer.start();
+        packetProducer2.start();
         firewall.start();
         time = System.currentTimeMillis();
         //run for 1 minute then move to code below
         try {
-            TimeUnit.MINUTES.sleep(1);
+            TimeUnit.MINUTES.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();
             System.out.println("failed");

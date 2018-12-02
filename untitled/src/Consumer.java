@@ -27,7 +27,8 @@ public class Consumer implements Runnable {
             SleepUtilities.nap((int)packet.serviceTime);
             try {
                 waitBoi.acquire();
-                System.out.println("Total packet time in ms: " + packet);
+                //System.out.println("P Time: " + packet);
+                packet.Stats();
                 waitBoi.release();
             } catch (InterruptedException e) {
                 System.out.println("waitBoi broke");
